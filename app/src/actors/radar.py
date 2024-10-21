@@ -78,7 +78,7 @@ class Radar(Thread):
             )
 
     # Public Radar methods
-    ## Methods for graphication
+    ## Methods for visualization
     def facing_point(self):
         """
         Return two points making a line where the radar is facing (counting the
