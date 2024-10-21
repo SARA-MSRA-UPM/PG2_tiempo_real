@@ -65,15 +65,15 @@ python3 app/main.py
 ```
 
 ## Objetivos a realizar
-1. **Graficar en tiempo real los movimientos de radares y puntos** Durante 
+1. **Graficar dinámicamente los movimientos de radares y puntos** Durante 
 esta práctica utilizaremos un escenario con varios radares y puntos similar al 
 final de la 
 [Práctica Guiada 1](https://github.com/SARA-MSRA-UPM/PG1_concurrencia). Sin 
-embargo, en este caso nuestro objetivo será mostrar en tiempo real las 
+embargo, en este caso nuestro objetivo será mostrar dinámicamente las 
 actualizaciones de los distintos agentes, radares y puntos. Para graficar los 
 distintos elementos utilizaremos la librería `matplotlib`. Esta librería nos 
 permite dibujar principalmente funciones o gráficas de datos, pero en este 
-caso lo utilizaremos como "motor visual".
+caso lo utilizaremos como "motor de visualización".
    - Implementaremos la clase `MapView` que nos ayudará a realizar tareas 
    comunes de visualización.
    - Modificaremos la clase Radar de tal implementando los métodos que ayudan 
