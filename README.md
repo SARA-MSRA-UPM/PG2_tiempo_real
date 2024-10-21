@@ -5,21 +5,23 @@ asignatura Software Avanzado Radar (SARA) del Master en Sistemas Radar.
 
 El repositorio contiene las siguientes carpetas:
 - `app`: contiene el archivo main.py para ejecutar la aplicación y la carpeta
-  `src` donde se situan el resto de archivos.
+  `src` donde se sitúan el resto de archivos.
 - `app/src`: contiene cada uno de los paquetes de python que usaremos durante
   el desarrollo de la práctica dividido de forma básica por las diferentes
   funcionalidades.
-    - `actors`: contiene las distintas clases con la lógica de funcionamiento
-      principal de la práctica
-    - `helpers`: contiene archivos con funcionalidades generales del proyecto
-      que pueden ser utilizada por cualquier clase principal.
-    - `base`: contine clases base utilizadas en como núcleo de distintas
-      funcionalidades del proyecto.
+  - `actors`: contiene las distintas clases con la lógica de funcionamiento
+    principal de la práctica
+  - `helpers`: contiene archivos con funcionalidades generales del proyecto
+    que pueden ser utilizadas por cualquier clase principal.
+  - `base`: contiene clases base utilizadas en como núcleo de distintas
+    funcionalidades del proyecto.
+  - `graphics`: contiene las clases utilizadas para la visualización de los
+    distintos datos y objetos del escenario.
 
 ## Escenario de la práctica
 El escenario de la práctica consiste en una implementación de un modelo
 digital de un radar. Además del modelo del radar también existe un modelo
-digital de puntos con distintas caraterísticas que pueden ser detectados por
+digital de puntos con distintas características que pueden ser detectados por
 el radar. Presenta la misma estructura e implementación que en la
 [Práctica Guiada 1](https://github.com/SARA-MSRA-UPM/PG1_concurrencia).
 
