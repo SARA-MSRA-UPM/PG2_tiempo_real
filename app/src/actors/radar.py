@@ -31,6 +31,9 @@ class Radar(Thread):
         self._increment = increment
         self.detectable_points = detectable_points
 
+        self.triangle = translate_figure(TRIANGLE, (self.x+1, self.y))
+        self.triangle = rotate_figure(self.triangle, self.orientation_initial, (self.x, self.y))
+
         self._monitor = monitor
         # Threads properties
         self._stop_event = Event()
@@ -84,11 +87,24 @@ class Radar(Thread):
         Return two points making a line where the radar is facing (counting the
         orientation)
         """
-        pass
+        orientation_rad = math.radians(self.orientation_initial + self.facing)
+        l = 3
+        p1 = (self.x, self.y)
+        p2 = (self.x + l * math.cos(orientation_rad), self.y + l * math.sin(orientation_rad))
+
+        return [p1, p2]
 
     def detection_line(self):
-        pass
+        orientation_rad = math.radians(self.orientation_initial+self.facing)
+        l = self.detection
+        p1 = (self.x, self.y)
+        p2 = (self.x + l * math.cos(orientation_rad), self.y + l * math.sin(orientation_rad))
+        return [p1, p2]
 
     def detection_area(self):
-        pass
+        orientation_rad = math.radians(self.orientation_initial+self.facing)
+        half_increment = math.radians(self._increment/2)
+        p1 = (self.x + self.detection_range * math.cos(orientation_rad + half_increment), self.y + self.detection_range * math.sin(orientation_rad + half_increment))
+        p2 = (self.x + self.detection_range * math.cos(orientation_rad - half_increment), self.y + self.detection_range * math.sin(orientation_rad - half_increment))
+        return [p1, p2, (self.x, self.y)]
 
