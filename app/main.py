@@ -1,12 +1,14 @@
 # external imports
 from time import sleep
+import matplotlib.pyplot as plt
 # internal imports
+from src.actors.points.circular_point import Point
 from src.actors.points.circular_point import CircularPoint
 from src.actors.points.eight_point import EightPoint
 from src.actors.points.path_point import PathPoint
 from src.actors.radar import Radar
-from src.base.monitor import Monitor
-from src.base.lector import Lector
+from src.monitors.detections_monitor import DetectionsMonitor
+from src.actors.detections_consumer import DetectionsConsumer
 from src.graphics.map_view import MapView
 
 
@@ -17,11 +19,11 @@ if __name__ == '__main__':
 
     # Create monitors and lectors
     number_of_monitors = 2
-    monitors = []
+    monitors = [] 
     lectors = []
     for index in range(number_of_monitors):
-        monitors.append(Monitor())
-        lectors.append(Lector(
+        monitors.append(DetectionsMonitor())
+        lectors.append(DetectionsConsumer(
             monitor=monitors[index]
         ))
 
@@ -30,7 +32,10 @@ if __name__ == '__main__':
         EightPoint(x=100, y=100),
         CircularPoint(x=40, y=140, radius=25),
         CircularPoint(x=140, y=40, radius=25),
-        # PathPoint(x=100, y=100, svg_path_file="./src/svg_images/star.svg"),
+        # Point(x=60, y=60),
+        # Point(x=15, y=120),
+        # Point(x=120, y=15)
+        # PathPoint(x=100, y=100, svg_path_file="./app/sources/star.svg"),
     ]
 
     # Create radars
@@ -38,32 +43,32 @@ if __name__ == '__main__':
         Radar(name="radar0",
               position=(50,100),
               detection_range=50,
-              orientation_initial=180,
-              increment=90,
+              initial_orientation=180,
+              increment=15,
               revolutions_per_second=2,
               detectable_points=points,
               monitor=monitors[0]),
         Radar(name="radar1",
               position=(150,100),
               detection_range=50,
-              orientation_initial=0,
-              increment=90,
+              initial_orientation=0,
+              increment=15,
               revolutions_per_second=2,
               detectable_points=points,
               monitor=monitors[0]),
         Radar(name="radar2",
               position=(100,50),
               detection_range=50,
-              orientation_initial=270,
-              increment=90,
+              initial_orientation=270,
+              increment=15,
               revolutions_per_second=2,
               detectable_points=points,
               monitor=monitors[1]),
         Radar(name="radar3",
               position=(100,150),
               detection_range=50,
-              orientation_initial=90,
-              increment=90,
+              initial_orientation=90,
+              increment=15,
               revolutions_per_second=2,
               detectable_points=points,
               monitor=monitors[1]),
