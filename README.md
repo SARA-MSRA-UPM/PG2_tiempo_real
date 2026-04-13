@@ -20,19 +20,10 @@ relacionados con el código de la aplicación.
 
 ## Escenario de la práctica
 
-El escenario consiste en el modelo digital de un radar. Además del modelo del
-radar también existe un modelo digital de puntos con distintas caraterísticas
-que serán detectados por el radar. Estos modelos serán los actores principales
-y su implementación se puede consultar en el paquete `app/actors/*`.
-
-Ambos modelos digitales son entidades independientes por lo que se han están
-implementados utilizando hebras permitiendo su ejecución de concurrente. Esto
-provoca que nos veamos obligados a implementar algún pratón de diseño de los
-estudiados con el objetivo de manejar los datos generados por las distintas
-detecciones del radar. Los patrones que vamos a utilizar son "Monitor" y
-"Productor-Consumidor".
-
-Para más detalles sobre las clases implementadas se puede consultar la
+El escenario de la práctica consiste en una implementación de un modelo
+digital de un radar. Además del modelo del radar también existe un modelo
+digital de puntos con distintas características que pueden ser detectados por
+el radar. Para más detalles sobre el proyecto se puede consultar la
 [Práctica Guiada 1](https://github.com/SARA-MSRA-UPM/PG1_concurrencia).
 
 ## Ejecución
